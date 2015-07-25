@@ -12,6 +12,6 @@
   },
   "permissions": [
     "unlimitedStorage" ,
-    "activeTab" , "http://*/*", "https://*/*"
+     "http://*/*", "https://*/*"
   ]
 }

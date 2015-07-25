@@ -7,7 +7,7 @@
 
   "app": {
     "background": {
-      "scripts": ["background.js"]
+      "scripts": ["background.js","inject.js"]
     }
   },
   "permissions": [
@@ -15,6 +15,14 @@
     "bookmarks",
     "http://www.blogger.com/",
     "unlimitedStorage",
-    "activeTab"
+    "activeTab",
+    "tabs", "http://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["jquery-1.7.2.min.js","content.js"],
+      "run_at": "document_start"
+    }
   ]
 }

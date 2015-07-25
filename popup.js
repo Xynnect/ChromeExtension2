@@ -2,6 +2,7 @@
  * Created by XelnectPC on 7/25/2015.
  */
 document.addEventListener('DOMContentLoaded', function() {
+
     var checkPageButton = document.getElementById('checkPage');
     checkPageButton.addEventListener('click', function() {
 
@@ -20,12 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
             f.submit();
         });
     }, false);
+
     var checkPageButton2 = document.getElementById('checkPage2');
     checkPageButton2.addEventListener('click', function() {
-
         var newURL = "http://www.google.nl";
         chrome.tabs.create({ url: newURL });
-
     }, false);
 
     var greeting = "hola, ";

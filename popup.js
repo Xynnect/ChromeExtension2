@@ -28,3 +28,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }, false);
 }, false);
+function updateContentStyle() {
+    var content = document.getElementById("content");
+    if (!content)
+        return;
+
+    var left = 0;
+    var top = 0;
+    var width = window.outerWidth;
+    var height = window.outerHeight;
+
+    var titlebar = document.getElementById("top-titlebar");
+    if (titlebar) {
+        height -= titlebar.offsetHeight;
+        top += titlebar.offsetHeight;
+    }
+    titlebar = document.getElementById("bottom-titlebar");
+    if (titlebar) {
+        height -= titlebar.offsetHeight;
+    }
+    titlebar = document.getElementById("left-titlebar");
+    if (titlebar) {
+        width -= titlebar.offsetWidth;
+        left += titlebar.offsetWidth;
+    }
+    titlebar = document.getElementById("right-titlebar");
+    if (titlebar) {
+        width -= titlebar.offsetWidth;
+    }
+
+    var contentStyle = "position: absolute; ";
+    contentStyle += "left: " + left + "px; ";
+    contentStyle += "top: " + top + "px; ";
+    contentStyle += "width: " + width + "px; ";
+    contentStyle += "height: " + height + "px; ";
+    content.setAttribute("style", contentStyle);
+}
